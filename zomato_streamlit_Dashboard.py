@@ -161,5 +161,5 @@ st.markdown("""
 - **Table Booking** also improves customer perception and ratings.
 - **High-cost restaurants** often sustain **higher ratings** compared to low-cost ones.
 - Restaurants that offer **online ordering** are rated better, possibly because of convenience, faster service, or customer expectations being met.
-- very few restaurants (only ~4.7%) offer both online ordering and table booking together, while the majority (~95%) don’t provide both services simultaneously.
+- very few restaurants offer both online ordering and table booking together, while the majority don’t provide both services simultaneously.
 """)
