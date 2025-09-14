@@ -4,11 +4,15 @@ import subprocess
 subprocess.run(["pip", "install", "-r", "requirements.txt"])
 
 
+
+# Import libraries
 import streamlit as st
 import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
+import plotly.express as px
+import calendar
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+from dash import Dash, dcc, html, Input, Output
 import io
 
 sns.set_style("whitegrid")
