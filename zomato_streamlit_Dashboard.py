@@ -7,6 +7,7 @@ subprocess.run(["pip", "install", "-r", "requirements.txt"])
 
 # Import libraries
 import streamlit as st
+import numpy as np
 import pandas as pd
 import plotly.express as px
 import calendar
