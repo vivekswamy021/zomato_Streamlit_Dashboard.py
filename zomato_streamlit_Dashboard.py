@@ -15,7 +15,6 @@ from plotly.subplots import make_subplots
 from dash import Dash, dcc, html, Input, Output
 import io
 
-sns.set_style("whitegrid")
 
 st.set_page_config(page_title="Zomato EDA Dashboard", layout="wide")
 
