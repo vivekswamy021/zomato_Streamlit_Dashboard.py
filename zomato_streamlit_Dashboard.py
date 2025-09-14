@@ -132,12 +132,6 @@ with col7:
                   title="Top 10 Most Voted Restaurants")
     st.plotly_chart(fig7, use_container_width=True)
 
-with col8:
-    low_voted = df.sort_values(by='votes').head(10)
-    fig8 = px.bar(low_voted, x='votes', y='name', orientation='h', color='votes',
-                  title="Low Voted Restaurants")
-    st.plotly_chart(fig8, use_container_width=True)
-
 # ----------------------
 # Average Cost by Type
 # ----------------------
