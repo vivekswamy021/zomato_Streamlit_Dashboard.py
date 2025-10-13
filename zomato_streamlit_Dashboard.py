@@ -1,4 +1,4 @@
-# zomato_dashboard.py
+# zomato_dashboard_interactive.py
 
 import streamlit as st
 import pandas as pd
@@ -9,7 +9,7 @@ import plotly.graph_objects as go
 # Page Config
 # ---------------------
 st.set_page_config(page_title="Zomato Restaurant Dashboard", page_icon=":bar_chart:", layout="wide")
-st.title("🍽️ Zomato Restaurant Dashboard")
+st.title("🍽️ Zomato Interactive Restaurant Dashboard")
 
 # ---------------------
 # Load Data
@@ -37,19 +37,17 @@ def load_data():
 
 data = load_data()
 
-# ----------------------
+# ---------------------
 # Sidebar Filters
-# ----------------------
+# ---------------------
 st.sidebar.header("Filters")
-selected_type = st.sidebar.selectbox(
-    "Restaurant Type",
-    ["All"] + sorted(data['restaurant_type'].dropna().unique())
-)
 
-if selected_type != "All":
-    df = data[data['restaurant_type'] == selected_type]
-else:
-    df = data.copy()
+# Multi-select for restaurant type
+restaurant_types = st.sidebar.multiselect(
+    "Select Restaurant Type(s)",
+    options=sorted(data['restaurant_type'].dropna().unique()),
+    default=sorted(data['restaurant_type'].dropna().unique())
+)
 
 # Rating slider
 min_rate, max_rate = st.sidebar.slider(
