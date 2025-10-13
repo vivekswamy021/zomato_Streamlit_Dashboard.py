@@ -14,7 +14,7 @@ import plotly.graph_objects as go
 # Page Config
 # ----------------------
 st.set_page_config(page_title="Zomato Insights Dashboard", page_icon=":bar_chart:", layout="wide")
-st.title("🍽️ Zomato Restaurant Insights Dashboard")
+st.title("🍽️ Zomato Restaurant Dashboard")
 
 # ----------------------
 # Load Data
