@@ -37,17 +37,19 @@ def load_data():
 
 data = load_data()
 
-# ---------------------
+# ----------------------
 # Sidebar Filters
-# ---------------------
+# ----------------------
 st.sidebar.header("Filters")
-
-# Multi-select for restaurant type
-restaurant_types = st.sidebar.multiselect(
-    "Select Restaurant Type(s)",
-    options=sorted(data['restaurant_type'].dropna().unique()),
-    default=sorted(data['restaurant_type'].dropna().unique())
+selected_type = st.sidebar.selectbox(
+    "Restaurant Type",
+    ["All"] + sorted(data['restaurant_type'].dropna().unique())
 )
+
+if selected_type != "All":
+    df = data[data['restaurant_type'] == selected_type]
+else:
+    df = data.copy()
 
 # Rating slider
 min_rate, max_rate = st.sidebar.slider(
