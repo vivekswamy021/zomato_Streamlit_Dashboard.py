@@ -1,4 +1,3 @@
-# zomato_dashboard_streamlit.py
 # 🍽 Zomato Restaurant Data Analysis & Visualization
 
 ## 📊 Project Overview
