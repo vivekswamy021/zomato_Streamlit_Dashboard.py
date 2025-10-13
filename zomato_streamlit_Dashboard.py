@@ -71,6 +71,9 @@ min_cost, max_cost = st.sidebar.slider(
     max_value=int(data['cost_for_two'].max()),
     value=(int(data['cost_for_two'].min()), int(data['cost_for_two'].max()))
 )
+# Precompute min/max
+rate_min, rate_max = float(data['rate'].min()), float(data['rate'].max())
+cost_min, cost_max = int(data['cost_for_two'].min()), int(data['cost_for_two'].max())
 
 # ----------------------
 # KPI Metrics
