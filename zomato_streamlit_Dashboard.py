@@ -74,21 +74,6 @@ online_filter = st.sidebar.multiselect("Online Order", options=['Yes', 'No'], de
 booking_filter = st.sidebar.multiselect("Table Booking", options=['Yes', 'No'], default=['Yes', 'No'])
 
 # ----------------------
-# Filter Data Function
-# ----------------------
-@st.cache_data
-def filter_data(df, r_type, r_min, r_max, c_min, c_max, online, booking):
-    df_filtered = df.copy()
-    if r_type != "All":
-        df_filtered = df_filtered[df_filtered['restaurant_type'] == r_type]
-    df_filtered = df_filtered[(df_filtered['rate'] >= r_min) & (df_filtered['rate'] <= r_max)]
-    df_filtered = df_filtered[(df_filtered['cost_for_two'] >= c_min) & (df_filtered['cost_for_two'] <= c_max)]
-    df_filtered = df_filtered[df_filtered['online_order'].isin(online) & df_filtered['book_table'].isin(booking)]
-    return df_filtered
-
-df = filter_data(data, selected_type, min_rate, max_rate, min_cost, max_cost, online_filter, booking_filter)
-
-# ----------------------
 # KPIs
 # ----------------------
 col1, col2, col3, col4 = st.columns(4)
